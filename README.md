@@ -1,6 +1,7 @@
 # DeliveryCard_Selenide
 
-[![Build status](https://ci.appveyor.com/api/projects/status/t6ul3ycrcr21d2jh?svg=true)](https://ci.appveyor.com/project/PerochenkoVA/deliverycard-selenide)
+[![Build status](https://ci.appveyor.com/api/projects/status/62d6jm9h8t8g8x2o?svg=true)](https://ci.appveyor.com/project/PerochenkoVA/pattern2)
+
 
 
 Задача №2 - Тестовый режим
