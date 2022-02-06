@@ -19,6 +19,25 @@ public class DeliveryCardTest {
     }
 
     @Test
+    void shouldSuccessfullySendForm() {
+        RegistrationInfo validUser = DataGenerator.Registration.generateRegisteredUser("active");
+        $("[data-test-id=login] input").setValue(validUser.getLogin());
+        $("[data-test-id=password] input").setValue(validUser.getPassword());
+        $("button[data-test-id=action-login]").click();
+        $(withText("Личный кабинет")).shouldBe(appear);
+
+    }
+    @Test
+    void shouldGetErrorWithBlockedUser(){
+        RegistrationInfo blockedUser = DataGenerator.Registration.generateRegisteredUser("blocked");
+        $("[data-test-id=login] input").setValue(blockedUser.getLogin());
+        $("[data-test-id=password] input").setValue(blockedUser.getPassword());
+        $("button[data-test-id=action-login]").click();
+        $(withText("Пользователь заблокирован")).shouldBe(appear);
+    }
+    
+    /*
+    @Test
     void shouldSuccessTest() {
         RegistrationInfo validUser = DataGenerator.Registration.shouldValidLogin();
         $("[data-test-id=login] input").setValue(validUser.getLogin());
@@ -50,4 +69,5 @@ public class DeliveryCardTest {
         $("button[data-test-id=action-login]").click();
         $("[data-test-id='error-notification'] .notification__content").shouldBe(appear).shouldHave(text("Неверно указан логин или пароль"));
     }
+    */
 }
