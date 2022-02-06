@@ -52,20 +52,11 @@ public class DataGenerator {
         }
 
 
-        public static RegistrationInfo shouldValidLogin() {
+        public static RegistrationInfo generateRegisteredUser(String status) {
             RegistrationInfo registrationInfo = new RegistrationInfo(
-                    randomLogin(),
-                    randomPassword(),
-                    "active");
-            makeRequest(registrationInfo);
-            return registrationInfo;
-        }
-
-        public static RegistrationInfo shouldNoValidLogin() {
-            RegistrationInfo registrationInfo = new RegistrationInfo(
-                    randomLogin(),
-                    randomPassword(),
-                    "blocked");
+                  randomLogin(),
+                  randomPassword(),
+                  status);
             makeRequest(registrationInfo);
             return registrationInfo;
         }
