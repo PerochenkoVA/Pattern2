@@ -27,7 +27,7 @@ public class DataGenerator {
             .log(LogDetail.ALL)
             .build();
 
-    @BeforeAll
+    
     static void makeRequest(RegistrationInfo registrationInfo) {
         // сам запрос
         given() // "дано"
